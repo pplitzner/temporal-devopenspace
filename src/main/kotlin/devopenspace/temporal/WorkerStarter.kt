@@ -6,7 +6,8 @@ import io.temporal.worker.WorkerFactory
 import io.temporal.worker.registerWorkflowImplementationType
 
 fun main(){
-    val client = WorkflowClient.newInstance(WorkflowServiceStubs.newLocalServiceStubs())
+    val service = WorkflowServiceStubs.newLocalServiceStubs()
+    val client = WorkflowClient.newInstance(service)
     val factory = WorkerFactory.newInstance(client)
     val worker = factory.newWorker("hello-queue")
     worker.registerWorkflowImplementationType<HelloWorkflowImpl>()
