@@ -8,7 +8,10 @@ import io.temporal.serviceclient.WorkflowServiceStubs
 fun main(){
     val service = WorkflowServiceStubs.newLocalServiceStubs()
     val client = WorkflowClient.newInstance(service)
-    val workflowOptions = WorkflowOptions.newBuilder().setTaskQueue("hello-queue").build()
+    val workflowOptions = WorkflowOptions.newBuilder()
+        .setTaskQueue("hello-queue")
+        .build()
     val workflow = client.newWorkflowStub<HelloWorkflow>(workflowOptions)
-    workflow.sayHello()
+    val result = workflow.sayHello("Patrick")
+    println(result)
 }

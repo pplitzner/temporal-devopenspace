@@ -7,14 +7,14 @@ import io.temporal.workflow.WorkflowMethod
 interface HelloWorkflow {
 
     @WorkflowMethod
-    fun sayHello()
+    fun sayHello(name: String): String
 
 }
 
 class HelloWorkflowImpl: HelloWorkflow {
 
-    override fun sayHello() {
-        println("Hello Devopenspace")
+    override fun sayHello(name: String): String {
+        return "Hello $name"
     }
 
 }
