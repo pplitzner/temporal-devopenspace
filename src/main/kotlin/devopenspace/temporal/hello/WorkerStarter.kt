@@ -1,4 +1,4 @@
-package devopenspace.temporal
+package devopenspace.temporal.hello
 
 import io.temporal.client.WorkflowClient
 import io.temporal.serviceclient.WorkflowServiceStubs
