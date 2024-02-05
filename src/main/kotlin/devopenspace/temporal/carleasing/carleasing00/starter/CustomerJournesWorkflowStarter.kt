@@ -13,6 +13,8 @@ fun main(){
         .setTaskQueue(QUEUE_NAME)
         .build()
     val workflow = client.newWorkflowStub<CustomerJourneyWorkflow>(workflowOptions)
-    val result = workflow.customerJourney("Renault ZOE", "patrick.plitzner@aldautomotive.com")
-    println(result)
+    WorkflowClient.start(workflow::customerJourney,"Renault ZOE", "patrick.plitzner@aldautomotive.com")
+
+//    val result = workflow.customerJourney("Renault ZOE", "patrick.plitzner@aldautomotive.com")
+//    println(result)
 }

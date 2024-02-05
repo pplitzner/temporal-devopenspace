@@ -9,6 +9,7 @@ interface CustomerJourneyActivity {
     fun sendCheckupMail(email: String)
     fun sendCarInfoMail(email: String, carName: String)
     fun creditCheck(email: String): Boolean
+    fun sendCreditCheckSuccessfulMail(email: String)
     fun leaseCar(car: String, email: String)
 }
 class CustomerJourneyActivityImpl: CustomerJourneyActivity {
@@ -33,6 +34,10 @@ class CustomerJourneyActivityImpl: CustomerJourneyActivity {
     override fun creditCheck(email: String): Boolean {
         println("Credit check successful")
         return true
+    }
+
+    override fun sendCreditCheckSuccessfulMail(email: String) {
+        println("Send CreditCheck successful Mail to $email")
     }
 
     override fun leaseCar(car: String, email: String) {

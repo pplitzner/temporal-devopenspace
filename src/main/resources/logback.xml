@@ -5,9 +5,11 @@
         </encoder>
     </appender>
     <logger name="io.grpc.netty" level="INFO"/>
-    <logger name="io.temporal.serviceclient.ChannelManager" level="INFO"/>
+    <logger name="io.temporal.internal.worker.WorkflowExecutorCache" level="TRACE"/><!-- specific log for non-deterministic errors -->
+    <logger name="io.temporal.internal" level="INFO"/>
+    <logger name="io.temporal.serviceclient" level="INFO"/>
     <logger name="io.temporal.internal.replay.ReplayWorkflowTaskHandler" level="INFO"/> <!-- set to debug for replay logs -->
-    <root level="DEBUG">
+    <root level="ALL"><!-- set to ALL to see non-deterministic errors -->
         <appender-ref ref="STDOUT" />
     </root>
 </configuration>

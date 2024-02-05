@@ -29,7 +29,9 @@ class CustomerJourneyWorkflowImpl: CustomerJourneyWorkflow {
         if(success) {
             customerActivity.leaseCar(car, email)
 
-            Workflow.sleep(Duration.ofDays(14))
+            val waitTime = Duration.ofDays(14)
+            println("Waiting ${waitTime.toDays()} days")
+            Workflow.sleep(waitTime)
 
             customerActivity.sendCheckupMail(email)
         }
